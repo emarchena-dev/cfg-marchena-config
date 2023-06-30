@@ -51,7 +51,7 @@ deuda:
   partWebviewPagos: account_bill_payment
 
   urlInvoice: https://apis10.telefonica.com.pe/vp-tecnologia/bss/ri/invoiceManagement/v4/invoices
-		
+
   urlIbmCloud: https://apis10.telefonica.com.pe/vp-tecnologia/bss/webviews/v1.7/users/
   urlWebview: https://apis10.telefonica.com.pe/vp-tecnologia/bss/webviews/v1.7/users
   idPartWebview: TYPE-ID
