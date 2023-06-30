@@ -1,3 +1,15 @@
+spring:
+  datasource:
+    url: '{keyvault}TDP-DBADMIN-URL'
+    username: '{keyvault}TDP-DBADMIN-USR'
+    password: '{keyvault}TDP-DBADMIN-PW'
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
 deuda:
   application: NOVUM
   vApplicationIdMT: b96f9c62-e6af-45dc-8561-599daa9368b9
@@ -8,4 +20,88 @@ deuda:
   vIdComercioOthers2: '02500000015'
   vIdComercioMT: '02500000014'
   vIdComercioOthers: '02500000013'
-    
+
+  vIdComercioReceipts: '02500000012'
+  applicationIdReceipts: 798381a3-8d49-437b-a0f7-c018e9de1029
+
+  #new checkout
+  #canal movil
+  comercioIdMovil: '02500000312'
+  applicationIdMovil: de8b5522-f097-4e5a-9b91-6ba0ecc5a8df
+  #canal MT
+  comercioIdMT: '02500000316'
+  applicationIdMT: 12afbf96-b54a-4844-824c-a60ff7f53bb8
+  #canal  Recibos Hogar + Simple
+  comercioIdFija: '02500000315'
+  applicationIdFija: d45368f7-db75-413c-a28f-060f71e0e67a
+
+  storageConnection: '{keyvault}AZURE-STORAGE-MIMOVISTAR-URLCONNECTION'
+  logTable: LogCFDeudas
+
+  callBackurlBrainyBill: https://ms-ne-mimovistar-webview-prod.us-south.cf.appdomain.cloud/redirect
+  webViewPartBrainyBill: interactive_invoice_PRODUCT_TYPE
+
+  urlFiveAccountBalance: https://apis10.telefonica.com.pe/vp-tecnologia/bss/ri/accounts/v3/accounts/ACCOUNT_CODE/balances
+
+  urlOpenDebts: https://apis10.telefonica.com.pe/vp-tecnologia/bss/payments-management/v2/retrieve-opendebts-from-provider
+
+  urlRetrieveUserProfile: https://apis10.telefonica.com.pe/vp-tecnologia/bss/ri/openid/v1/userinfo
+
+  callBackUrlWebviewPagos: https://ms-ne-mimovistar-webview-prod.us-south.cf.appdomain.cloud/redirect
+  partWebviewPagos: account_bill_payment
+
+  urlInvoice: https://apis10.telefonica.com.pe/vp-tecnologia/bss/ri/invoiceManagement/v4/invoices
+		
+  urlIbmCloud: https://apis10.telefonica.com.pe/vp-tecnologia/bss/webviews/v1.7/users/
+  urlWebview: https://apis10.telefonica.com.pe/vp-tecnologia/bss/webviews/v1.7/users
+  idPartWebview: TYPE-ID
+  partWebview: webviews
+  
+  urlWebToken1: https://apis10.telefonica.com.pe/vp-tecnologia/bss/webviews/v1.7/users/MSISDN-
+  
+  urlWebToken2: /webviews/external_payment_gateway
+
+  #restructuracion
+  webView: 
+   url: https://apis10.telefonica.com.pe/vp-tecnologia/bss/webviews/v1.7/users
+   userIdTypeParam: MSISDN
+   webViewsParam: webviews
+   viewIdParamAsync: external_payment_gateway_async
+   viewIdParam: external_payment_gateway   
+
+  xIBMClientId: '{keyvault}TDP-CLIENTID-APPCONVERGENTE-ONPREMISE-V10'
+
+#filter token
+azure:
+  storage:
+    connection-string: '{keyvault}ADMIN-STORAGE-TOKEN-URLCONNECTION'
+    catalog-table: token10
+
+genesis:
+  oauth:
+    onpremise:
+      clientIds: '{keyvault}TDP-CLIENTID-APPCONVERGENTE-ONPREMISE-V10'
+      expireIn: 480
+    cipher:
+      salt: "{keyvault}salt"
+      password: "{keyvault}Password"
+
+application:
+  catalog-error:
+    url: https://apimngr-genesis-prod.azure-api.net/errorlist/
+    subscription-key: 4b7d6d29e4be4b82b6418f44ceef60a2
+    connectTimeout: 2000
+    readTimeout: 2000
+    writeTimeout: 2000
+
+  #genesis audit-humio
+  genesis:
+    audit:
+      enabled: true
+      sender:
+        channel: aks-convergente-deuda-prod
+        connecttimeout: 4000
+        enabled: true
+        endpoint: https://ingesthumio.movistar.com.pe/api/v1/ingest/hec
+        readtimeout: 2000
+        token: "{keyvault}TDP-HUMIO-TOKEN"
