@@ -1,0 +1,10 @@
+deuda:
+  application: NOVUM
+  vApplicationIdMT: b96f9c62-e6af-45dc-8561-599daa9368b9
+  vApplicationIdOthers: e6b1f9e2-2c29-4cb4-80f6-95d5dd80d1b4
+  vApplicationIdMT2: 3a672fb8-0019-46ff-ba44-5e892926eff3
+  vApplicationIdOthers2: 3628a17b-24da-4ebd-80b8-1e95c5ad6450
+  vIdComercioMT2: '02500000016'
+  vIdComercioOthers2: '02500000015'
+  vIdComercioMT: '02500000014'
+  vIdComercioOthers: '02500000013'
